@@ -1,0 +1,11 @@
+form{
+	display: inline-grid;
+}
+
+#description{
+	padding-bottom: 50px;
+}
+
+table{
+	float: right;
+}
