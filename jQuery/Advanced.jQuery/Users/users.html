@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+
+        $('#submit').click(function() {
+          $('table').append('<tr><td>' + $('input[name="first_name"]').val() + '</td><td>'
+            + $('input[name="last_name"]').val() + '</td><td>'
+            + $('input[name="email"]').val() + '</td><td>'
+            + $('input[name="phone_number"]').val() + '</td></tr>');
+          return false;
+        });
+      });
+
+
+
+    </script>
+
+
+
+    <title></title>
+  </head>
+  <body>
+    <div id="wrapper">
+        <table id="user">
+          <tr>
+    				<td>First Name</td>
+    				<td>Last Name</td>
+    				<td>Email Address</td>
+    				<td>Contact #</td>
+    			</tr>
+        </table>
+
+        <main>
+          <h1>Add User</h1>
+          <form id='form' action="process.php" method="post">
+            <label>First name</label><input type="text" name="first_name">
+            <label>Last name</label><input type="text" name="last_name">
+            <label>Email</label><input type="text" name="email">
+            <label>Contact #</label><input type="text" name="contact">
+            <input id="submit" type="submit" value="submit!">
+          </form>
+        </main>
+      </div>
+
+
+
+    </main>
+
+
+
+  </body>
+</html>
