@@ -1,11 +1,22 @@
-form{
-	display: inline-grid;
+#back{
+	display: none;
+}
+input, textarea{
+	display: block;
 }
 
-#description{
-	padding-bottom: 50px;
+#left, #right{
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px;
 }
 
-table{
-	float: right;
+#front{
+	width: 150px;
+	height: 75px;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 5px 0;
 }
+

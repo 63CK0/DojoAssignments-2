@@ -2,39 +2,51 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Contact Card</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<script type="text/javascript">
-
-
 		$(document).ready(function(){
+			$('#submit').click(function(){
+				var first = $("#first").val();
+				var last = $("#last").val();
+				var desc = $("textarea").val();
 
+				$("#right").append("<div id ='front'><p>" + first +"" + last + "</p><p id = 'back'>" + desc + "</p></div>");
 
-
-
-			$(document).on('click', '#submit', function(){
-				alert('you clicked me')
+				$("#first").val("");
+				$("#last").val("");
+				$("#desc").val("");
+				//Return false to prevent refresh
+				return false;
 			
 			});
-			return false;
+
+			$(document).on('click','#front',function(){
+				$(this).children().toggle();
+			});
+
 		});
 
 	</script>
 </head>
 <body>
-	<form id="form" action="process.php" method="post">
-		<label>First name:</label><input type="text" name="first_name">
-		<label>Last name:</label><input type="text" name="last_name">
-		<label>Description</label><input id="description" type="text" name="description" placeholder="Enter description">
-		<input type="submit" value="Add User">
-		
-	</form>
+<div id wrapper>
+	<div id="left">
+		<form id="form" action="process.php" method="post">
+			<label>First name:</label><input id="first" type="text" name="first_name">
+			<label>Last name:</label><input id="last"type="text" name="last_name">
+			<label>Description</label>
+			<textarea id="desc" placeholder="Enter Description.."></textarea>
+			<input id="submit" type="submit" value="Add User">
+			
+		</form>
+	</div>
 
-	<table>
-		
-	</table>
+	<div id="right">
+
+	</div>
 
 </body>
 </html>
