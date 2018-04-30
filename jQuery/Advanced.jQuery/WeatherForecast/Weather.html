@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Weather Forecast</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+    		$('form').submit(function() {
+		        // your code here (build up your url)
+		        var api = 'c062654fe7bd420ad2ceeed2fb3152bf'
+		        var city = $(`input#city`).val();
+		        $.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&&appid=${api}`, function(res) {
+		            // your code here
+
+		            var output = ``;
+		            output += `<p> ${res['name']}:${res['weather'][0]['description']}</p>`;
+		            $('#weather').html(output);
+		        
+		        }, 'json');
+		        // don't forget to return false so the page doesn't refresh
+		        return false;
+		    });
+		});
+		
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+	    <form id="app">
+			<h1>Enter city for weather!</h1>
+			<label for="city">City:
+				<input type="text" id="city" name="city">
+			</label>
+			<input type="submit" name="submit">
+		</form>
+		<div id="weather"></div>
+	</div>
+
+
+	
+	
+</body>
+</html>
+http://api.openweathermap.org/data/2.5/weather?q=Baltimore&&appid=c062654fe7bd420ad2ceeed2fb3152bf
