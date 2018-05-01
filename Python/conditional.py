@@ -39,4 +39,3 @@ for val in 'string':
 	print val
 for val in 'string':
 	print val
-print 'zen'.'hi'

@@ -50,4 +50,3 @@ print len(my_list)
     list.index(value) returns the index position in a list for the given parameter.
 """
 
-print 'zen'.'hi'

@@ -29,6 +29,8 @@ list = [3,7,8,2,5]
 
 avgList(list)
 
+
+
 	
 
 
