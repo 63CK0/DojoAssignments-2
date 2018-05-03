@@ -18,11 +18,15 @@ print b
 
 
 def layered_multiples(arr):
-	for x in range(len(arr)):
-		arr[x] == 1
-		return new_array
+	new_array = []
+	for x in arr:
+		val_arr = []
+		for i in range(0,x):
+			val_arr.append(1)
+		new_array.append(val_arr)
+	return new_array
+
 x = layered_multiples(multiply([2,4,5],3))
 print x
-
 
 	
