@@ -4,6 +4,9 @@ my_dict = {
   "Jay": "(777) 777-7777"
 }
 
-def make_tuple():
-	print my_dict.items()
-make_tuple()
+def make_tuple(dict):
+	lst = []
+	for key, value in dict.iteritems():
+		lst.append((key,value))
+	print lst
+make_tuple(my_dict)
